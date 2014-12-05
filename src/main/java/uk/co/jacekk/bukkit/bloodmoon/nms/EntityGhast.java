@@ -1,13 +1,11 @@
 package uk.co.jacekk.bukkit.bloodmoon.nms;
 
 import net.minecraft.server.v1_8_R1.World;
-
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R1.CraftServer;
 import org.bukkit.craftbukkit.v1_8_R1.entity.CraftGhast;
 import org.bukkit.craftbukkit.v1_8_R1.entity.CraftLivingEntity;
 import org.bukkit.plugin.Plugin;
-
 import uk.co.jacekk.bukkit.bloodmoon.BloodMoon;
 import uk.co.jacekk.bukkit.bloodmoon.entity.BloodMoonEntityGhast;
 import uk.co.jacekk.bukkit.bloodmoon.entity.BloodMoonEntityType;
@@ -34,7 +32,7 @@ public class EntityGhast extends net.minecraft.server.v1_8_R1.EntityGhast {
 	}
 	
 	@Override
-	public void bL(){
+	public boolean bL() {
 		try{
 			this.bloodMoonEntity.onTick();
 			super.bL();
@@ -42,6 +40,7 @@ public class EntityGhast extends net.minecraft.server.v1_8_R1.EntityGhast {
 			plugin.log.warn("Exception caught while ticking entity");
 			e.printStackTrace();
 		}
+		return true;
 	}
 	
 }

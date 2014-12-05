@@ -1,28 +1,21 @@
 package uk.co.jacekk.bukkit.bloodmoon.entity;
 
-import java.util.List;
-import java.util.Map;
-
-import net.minecraft.server.v1_8_R1.BiomeBase;
-import net.minecraft.server.v1_8_R1.BiomeMeta;
-import net.minecraft.server.v1_8_R1.EntityInsentient;
-import net.minecraft.server.v1_8_R1.EntityTypes;
-import net.minecraft.server.v1_8_R1.GroupDataEntity;
-import net.minecraft.server.v1_8_R1.World;
-
+import net.minecraft.server.v1_8_R1.*;
 import org.bukkit.Location;
 import org.bukkit.craftbukkit.v1_8_R1.CraftWorld;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.entity.CreatureSpawnEvent.SpawnReason;
-
 import uk.co.jacekk.bukkit.baseplugin.util.ReflectionUtils;
 import uk.co.jacekk.bukkit.bloodmoon.EntityRegistrationException;
+
+import java.util.List;
+import java.util.Map;
 
 public enum BloodMoonEntityType {
 	
 	CREEPER("Creeper", 50, EntityType.CREEPER, net.minecraft.server.v1_8_R1.EntityCreeper.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntityCreeper.class),
 	ENDERMAN("Enderman", 58, EntityType.ENDERMAN, net.minecraft.server.v1_8_R1.EntityEnderman.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntityEnderman.class),
-	SKELETON("Skeleton", 51, EntityType.SKELETON, net.minecraft.server.v1_8_R1.EntitySkeleton.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntitySkeleton.class),
+	//SKELETON("Skeleton", 51, EntityType.SKELETON, net.minecraft.server.v1_8_R1.EntitySkeleton.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntitySkeleton.class),
 	SPIDER("Spider", 52, EntityType.SPIDER, net.minecraft.server.v1_8_R1.EntitySpider.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntitySpider.class),
 	ZOMBIE("Zombie", 54, EntityType.ZOMBIE, net.minecraft.server.v1_8_R1.EntityZombie.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntityZombie.class),
 	GHAST("Ghast", 56, EntityType.GHAST, net.minecraft.server.v1_8_R1.EntityGhast.class, uk.co.jacekk.bukkit.bloodmoon.nms.EntityGhast.class),
@@ -134,9 +127,8 @@ public enum BloodMoonEntityType {
 		
 		EntityInsentient entity = this.createEntity(world);
 		entity.setPositionRotation(location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
-		entity.prepare((GroupDataEntity) null);
 		world.addEntity(entity, SpawnReason.CUSTOM);
-		entity.p();
+		entity.p(null);
 	}
 	
 }

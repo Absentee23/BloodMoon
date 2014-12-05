@@ -1,30 +1,28 @@
 package uk.co.jacekk.bukkit.bloodmoon.feature.world;
 
-import java.util.Random;
-
 import net.minecraft.server.v1_8_R1.MobSpawnerAbstract;
 import net.minecraft.server.v1_8_R1.TileEntityMobSpawner;
-
 import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.TreeSpecies;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
-import org.bukkit.craftbukkit.v1_7_R4.CraftWorld;
+import org.bukkit.craftbukkit.v1_8_R1.CraftWorld;
 import org.bukkit.entity.EntityType;
 import org.bukkit.generator.BlockPopulator;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.material.Step;
 import org.bukkit.material.WoodenStep;
-
 import uk.co.jacekk.bukkit.baseplugin.config.PluginConfig;
 import uk.co.jacekk.bukkit.baseplugin.util.ListUtils;
 import uk.co.jacekk.bukkit.baseplugin.util.ReflectionUtils;
 import uk.co.jacekk.bukkit.bloodmoon.BloodMoon;
 import uk.co.jacekk.bukkit.bloodmoon.Config;
 import uk.co.jacekk.bukkit.bloodmoon.event.DungeonChestFillEvent;
+
+import java.util.Random;
 
 public class DungeonGenerator extends BlockPopulator {
 	

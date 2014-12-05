@@ -1,5 +1,4 @@
-name: "${project.name}"
-version: "${project.version}"
-main: "${project.groupId}.${project.artifactId}.${project.name}"
-website: "${project.url}"
+name: "BloodMoon"
+version: "0.25"
+main: "uk.co.jacekk.bukkit.bloodmoon.BloodMoon"
 load: startup

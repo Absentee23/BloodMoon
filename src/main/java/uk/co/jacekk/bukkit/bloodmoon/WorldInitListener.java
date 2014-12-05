@@ -37,7 +37,6 @@ public class WorldInitListener extends BaseListener<BloodMoon> {
 				newProvider.forceChunkLoad = worldServer.chunkProviderServer.forceChunkLoad;
 				
 				worldServer.chunkProviderServer = newProvider;
-				worldServer.chunkProvider = newProvider;
 			}catch (NoSuchFieldException e){
 				e.printStackTrace();
 			}

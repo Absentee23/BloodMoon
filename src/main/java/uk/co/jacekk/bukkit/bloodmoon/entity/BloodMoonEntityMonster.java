@@ -1,7 +1,6 @@
 package uk.co.jacekk.bukkit.bloodmoon.entity;
 
 import net.minecraft.server.v1_8_R1.EntityMonster;
-
 import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,7 +9,6 @@ import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_8_R1.entity.CraftLivingEntity;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.inventory.ItemStack;
-
 import uk.co.jacekk.bukkit.baseplugin.config.PluginConfig;
 import uk.co.jacekk.bukkit.bloodmoon.BloodMoon;
 import uk.co.jacekk.bukkit.bloodmoon.Config;
@@ -26,7 +24,7 @@ public abstract class BloodMoonEntityMonster extends BloodMoonEntityLiving {
 	}
 	
 	protected Block getBreakableTargetBlock(){
-		Location direction = nmsEntity.target.getBukkitEntity().getLocation().subtract(bukkitEntity.getLocation());
+		Location direction = nmsEntity.getGoalTarget().getBukkitEntity().getLocation().subtract(bukkitEntity.getLocation());
 		
 		double dx = direction.getX();
 		double dz = direction.getY();
