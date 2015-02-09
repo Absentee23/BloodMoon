@@ -26,7 +26,7 @@ public class FireArrowsListener extends BaseListener<BloodMoon> {
 		
 		if (entity instanceof Projectile && plugin.isActive(worldName) && plugin.isFeatureEnabled(worldName, Feature.FIRE_ARROWS) && worldConfig.getBoolean(Config.FEATURE_FIRE_ARROWS_IGNITE_TARGET)){
 			Projectile projectile = (Projectile) entity;
-			LivingEntity shooter = projectile.getShooter();
+			LivingEntity shooter = (LivingEntity) projectile.getShooter();
 
 //			if (shooter != null && ((CraftEntity) shooter).getHandle() instanceof EntitySkeleton && projectile.getFireTicks() > 0){
 //				Block block = projectile.getWorld().getBlockAt(projectile.getLocation());
