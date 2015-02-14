@@ -39,7 +39,7 @@ public enum BloodMoonEntityType {
 		this.nmsClass = nmsClass;
 		this.bloodMoonClass = bloodMoonClass;
 	}
-	
+        @SuppressWarnings("unchecked")
 	public static void registerEntities() throws EntityRegistrationException {
 		if (registered){
 			throw new EntityRegistrationException("Already registered.");
@@ -73,8 +73,8 @@ public enum BloodMoonEntityType {
 			
 			for (String field : new String[]{"as", "at", "au", "av"}){
 				try{
-					@SuppressWarnings("unchecked")
-					List<BiomeMeta> mobList = ReflectionUtils.getFieldValue(BiomeBase.class, field, List.class, biomeBase);
+//					@SuppressWarnings("unchecked")
+					List<BiomeMeta> mobList = (List<BiomeMeta>) ReflectionUtils.getFieldValue(BiomeBase.class, field, BiomeBase.class, biomeBase);
 					
 					for (BiomeMeta meta : mobList){
 						for (BloodMoonEntityType entity : values()){
