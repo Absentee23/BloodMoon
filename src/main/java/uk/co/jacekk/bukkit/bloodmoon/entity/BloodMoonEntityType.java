@@ -71,7 +71,8 @@ public enum BloodMoonEntityType {
 				break;
 			}
 			
-			for (String field : new String[]{"as", "at", "au", "av"}){
+			//for (String field : new String[]{"as", "at", "au", "av"}){
+			for (String field : new String[]{"at", "au", "av", "aw"}){  //MineCraft Changing the names of fields :l
 				try{
 //					@SuppressWarnings("unchecked")
 					List<BiomeMeta> mobList = (List<BiomeMeta>) ReflectionUtils.getFieldValue(BiomeBase.class, field, BiomeBase.class, biomeBase);
