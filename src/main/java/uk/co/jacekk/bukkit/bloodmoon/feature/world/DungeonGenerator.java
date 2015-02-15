@@ -268,14 +268,15 @@ public class DungeonGenerator extends BlockPopulator {
 				
 				if (type != null){
 					ItemStack item = new ItemStack(type);
-					item.setAmount(Math.min(type.getMaxStackSize(), rand.nextInt(worldConfig.getInt(Config.FEATURE_DUNGEONS_MAX_STACK_SIZE))));
+					//item.setAmount(Math.min(type.getMaxStackSize(), rand.nextInt(worldConfig.getInt(Config.FEATURE_DUNGEONS_MAX_STACK_SIZE))));
+					int low = worldConfig.getInt(Config.FEATURE_DUNGEONS_MIN_STACK_SIZE);
+					int high = worldConfig.getInt(Config.FEATURE_DUNGEONS_MAX_STACK_SIZE);
+					int randomInt = rand.nextInt(high - low) + low;
+					item.setAmount(randomInt);
 					
 					inv.setItem(rand.nextInt(inv.getSize()), item);
 				}
 			}
-			
-			this.plugin.pluginManager.callEvent(new DungeonChestFillEvent(chest));
-		}
 		
 		// Set markers for protection
 		Block top = chunk.getBlock(8, yMax + 5, 8);
